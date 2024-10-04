@@ -55,13 +55,13 @@ def ten_point(wid, hie): # funktion för och klassifiera punkterna för och kunn
    sortlist = sorted(liist) # sortera listan
    ten_nearest = sortlist[:10] # tar fram de 10 närmaste värden
    index_nearest_point = [liist.index(x) for x in ten_nearest] # visar raderna på de 10 närmsta avstånden
-   result = df.loc[index_nearest_point, "Pichu_pikachu"] # 
+   result = df.loc[index_nearest_point, "Pichu_pikachu"] # kollar värdena på de tio närmaste punkterna ifall det är pichu eller pikachu
    if sum(result) >= 5:
-      return f"point ({wid},{hie}) classified as Pikachu based on majority of ten point"
+      return f"point ({wid},{hie}) classified as Pikachu based on majority of ten point" # visar värden på punkterna om det är pichu eller pikachu
    else: 
       return f"point ({wid},{hie}) classified as Pichu based on majority of ten point"
 
-for x, y in zip(test_data["Width"], test_data["Height"]):
+for x, y in zip(test_data["Width"], test_data["Height"]): # loppar testdatan i funktionen och visar värden på testpunkterna om det är pichu eller pikachu
    print(ten_point(x, y))
 
 print()
